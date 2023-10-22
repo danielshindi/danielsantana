@@ -1,0 +1,302 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Setando tamanho de fonte padrão e variáveis para as cores */
+:root {
+    font-size: 18px;
+    --cinza_claro: rgb(223, 223, 223);
+    --roxo_claro: #c770f0;
+    --roxo_medio: #a189e2;
+    --azul_escuro: #080f31;
+}
+
+/* ---- Body ---- */
+/* determinando cores do body e estilo geral de links e listas */
+body {
+    background-image: linear-gradient(270deg,#1b1429,#311a77);
+    color: var(--cinza_claro);
+}
+
+a {
+    color: var(--roxo_medio);
+}
+
+a:hover {
+    color: var(--roxo_claro);
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+/* ---- Menu, horizontal, centralizado, fixo no topo ---- */
+nav {
+    background-color: var(--azul_escuro);
+    display: flex;
+    justify-content: center; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;  
+}
+ 
+nav li {
+   float:left;     
+}
+
+nav a {
+   display: block;
+   text-decoration: none;
+   width: auto;
+   padding: 24px 24px 17px 24px;
+   margin: 0 auto;
+   color: var(--cinza_claro);
+   text-align: center;
+   font-weight: bold;
+   text-transform: uppercase;
+}
+
+/* Linha abaixo do item do menu que aparece quando o mouse está sobre ele - animação do retângulo*/
+.retangulo {
+    width: 0;
+    height: 5px;
+    background-color: var(--roxo_claro);
+    border-radius: 4px;
+    transition: width 0.3s;
+    transition-timing-function: ease-in-out;
+}
+nav a:hover .retangulo {
+    width: 100%;
+}
+
+
+/* ---- Cabeçalho ---- */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(270deg,#311a77, #1b1429);
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 40px;
+    padding: 10px;
+    color: var(--roxo_medio);
+    text-shadow: 1px 1px 80px var(--roxo_claro);
+    text-align: center;
+}
+
+
+/* ---- Container contêndo os blocos aside, section e article ---- */
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* ---- Section ---- */
+section {
+    margin: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+section h1 {
+    font-size: xx-large;
+    margin-bottom: 36px;
+    color: var(--roxo_claro);
+}
+
+section p {
+    text-align: justify;
+}
+
+span {
+    color: var(--roxo_claro);
+}
+
+/* Lista com os links do portfolio */
+.lista-links {
+    list-style-type: disc;
+    padding: 10px;   
+}
+
+/* -- Formulário de contato -- */
+#formulario {
+    max-width: 650px;
+}
+
+#formulario input, textarea {
+    height: 40px;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+#mensagem {
+    height: 150px;
+}
+
+#submit {
+    max-width: 90px;
+}
+
+
+
+/* ---- Aside ---- */
+aside {
+    margin: 20px 30px 20px 50px;
+}
+
+#foto-perfil {
+    width: 170px;
+    height: 170px;
+    margin: 10px 20px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    background: linear-gradient(#7a78da, #d836ed, #633bbc) padding-box, linear-gradient(260deg, #7a78da, #d836ed, #633bbc) border-box;
+}
+
+/* -- lista com os links para as redes sociais --*/
+.lista-contato {
+    display: flex;
+    gap: 10px;
+    
+}
+
+.lista-contato li {
+    float: left;
+    display: inline;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+.lista-contato li a {
+    display: block;
+}
+
+.icon {
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+}
+
+.icon:hover {
+    scale: 1.2;
+}
+
+
+/* ---- Article ---- */
+article {
+    font-size: 15px;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    margin-top: 60px;
+}
+
+article div {
+    margin: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(#8535cf62, #915de636, #794fd436);
+    min-width: 370px;
+}
+
+article div p {
+    margin: 10px;
+}
+
+
+/* ---- Footer ---- */
+footer {
+    text-align: center;
+    height: 160px;
+    padding-top: 40px;
+    background-color: var(--azul_escuro);
+    font-size: 14px;
+}
+
+
+
+/* ---- Responsividade ---- */
+@media screen and (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+
+    section {
+        width: auto;
+    }
+
+    article {
+        display: flex;
+        flex-direction: row; 
+    }
+
+    article div {
+        min-width: 300px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    nav ul {
+        font-size: 14px;
+        gap: 0;
+    }
+
+    nav a {
+        padding: 10px 12px;    
+      }
+    
+    header {
+        height: 200px;
+    }
+    aside {
+        display: flex;
+        flex-direction: column;
+    }
+    #foto-perfil {
+        float: left;
+        width: 150px;
+        height: 150px;
+    }
+    
+    section {
+        margin: 10px;
+    }
+    article {
+        /* permitir quebra de linha */
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    nav ul {
+        font-size: 11px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+   
+
+    footer {
+        padding-top: 20px;
+        height: 120px;
+    }
+}
